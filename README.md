@@ -20,6 +20,42 @@ A collection of useful Linux commands for daily use, system administration, and 
 
 ---
 
+## 💁️ User Management
+- `id`  
+  Show user ID and group ID.
+- `who`  
+  Show who is logged in.
+- `users`  
+  Show currently logged-in users.
+- `sudo useradd newuser`  
+  Create a new user.
+- `sudo passwd newuser`  
+  Set a password for a user.
+- `sudo userdel -r username`  
+  Delete a user and their home directory.
+- `sudo usermod -aG groupname username`  
+  Add a user to a group.
+- `groups username`  
+  Show groups a user belongs to.
+- `sudo deluser username groupname`  
+  Remove a user from a group.
+
+---
+
+## 🔧 Managing Users in Docker
+- `sudo groupadd docker`  
+  Create the Docker group if it doesn't exist.
+- `sudo usermod -aG docker $USER`  
+  Add the current user to the Docker group.
+- `newgrp docker`  
+  Apply changes without logging out.
+- `sudo systemctl restart docker`  
+  Restart Docker to apply changes.
+- `docker ps`  
+  Verify the user can run Docker commands without `sudo`.
+
+---
+
 ## 📁 File and Directory Management
 - `ls -la`  
   List all files and directories (including hidden) with details.
@@ -54,7 +90,7 @@ A collection of useful Linux commands for daily use, system administration, and 
 
 ---
 
-## 🔍 Disk and Storage
+## 💪 Disk and Storage
 - `df -h`  
   Show disk usage in human-readable format.
 - `du -sh dir`  
@@ -82,7 +118,7 @@ A collection of useful Linux commands for daily use, system administration, and 
 
 ---
 
-## 🔧 Process and System Monitoring
+## 🛠️ Process and System Monitoring
 - `top`  
   Show real-time system processes.
 - `htop`  
@@ -100,7 +136,7 @@ A collection of useful Linux commands for daily use, system administration, and 
 
 ---
 
-## 🐳 Docker
+## 🐩 Docker
 - `docker ps`  
   Show running containers.
 - `docker images`  
@@ -116,7 +152,7 @@ A collection of useful Linux commands for daily use, system administration, and 
 
 ---
 
-## 🛜 SSH and File Transfer
+## 💬 SSH and File Transfer
 - `ssh user@server`  
   Connect to a remote server via SSH.
 - `scp file user@server:/path`  
@@ -126,7 +162,7 @@ A collection of useful Linux commands for daily use, system administration, and 
 
 ---
 
-## 🗜️ Compression & Archiving
+## 💪 Compression & Archiving
 - `tar -cvf archive.tar file_or_dir`  
   Create a tar archive.
 - `tar -xvf archive.tar`  
@@ -150,6 +186,7 @@ A collection of useful Linux commands for daily use, system administration, and 
   Install a package.
 - `sudo apt remove pkg`  
   Remove a package.
+
 ---
 
 ## 🔥 Miscellaneous
@@ -172,3 +209,4 @@ A collection of useful Linux commands for daily use, system administration, and 
 - Use `sudo` before commands that require administrative privileges.
 - The `htop` command provides a more user-friendly, interactive version of `top`, and can be installed via `sudo apt install htop` (on Debian-based systems).
 - `docker exec` allows you to interact with containers without stopping them.
+
